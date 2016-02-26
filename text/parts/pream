@@ -1,0 +1,27 @@
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
+\usepackage{fontspec}
+	\setmainfont%[ExternalLocation=parts/fonts/]
+		{Liberation Serif}
+	\setromanfont%[ExternalLocation=parts/fonts/]
+		{Liberation Serif}
+	\setsansfont%[ExternalLocation=parts/fonts/]
+		{Liberation Sans}
+	\setmonofont%[ExternalLocation=parts/fonts/]
+		{Liberation Mono}
+	\newfontfamily\cyrillicfont%[ExternalLocation=parts/fonts/]
+		{Liberation Serif}
+
+\usepackage{geometry}
+	\geometry{left	= 3	cm}
+	\geometry{right	= 1	cm}
+	\geometry{top	= 2	cm}
+	\geometry{bottom= 2	cm}
+
+\usepackage{datetime}
+	\newdateformat{CurrentYear}{\THEYEAR}
+
+\usepackage{url}
+\bibliographystyle{ugost2008}

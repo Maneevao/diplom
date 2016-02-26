@@ -10,3 +10,5 @@ https://threatpost.ru/ataki-na-bios-sil-no-prevoshodyat-sredstva-zashhitny-e/180
 https://threatpost.ru/eksperty-laboratorii-kasperskogo-proanalizirovali-modul-stojkosti-equation/6340/ - "Эксперты «Лаборатории Касперского» проанализировали модуль стойкости Equation"
 
 http://www.securitylab.ru/news/476986.php - "Производители встраиваемых устройств не тестируют их безопасность"
+
+https://xakep.ru/2013/04/06/60404/ - "Исходный код AMI-BIOS и ключи подписи UEFI попали в открытый доступ"
