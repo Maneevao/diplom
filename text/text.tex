@@ -1,19 +1,15 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper]{report}
 \input{parts/pream}
 \begin{document}
 	\input{parts/TitlePage.tex}
 	\tableofcontents
-	\newpage
+
 	\input{parts/introduction.tex}
-	\input{parts/1glava.tex}
-	\input{parts/firmware.tex}
-	\input{parts/bootkit.tex}
-	\input{parts/bios.tex}
-	\input{parts/dinanalyze.tex}
+	\input{parts/common.tex}
+	\input{parts/security.tex}
 	\input{parts/work.tex}
 	\input{parts/finish.tex}
-%	\input{""}
-	\newpage
+
 	\nocite{*}
 	\bibliography{parts/biblio}
 \end{document}

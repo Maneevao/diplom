@@ -1,6 +1,6 @@
 \usepackage{polyglossia}
-\setdefaultlanguage{russian}
-\setotherlanguage{english}
+	\setdefaultlanguage{russian}
+	\setotherlanguage{english}
 
 \usepackage{fontspec}
 	\setmainfont%[ExternalLocation=parts/fonts/]
