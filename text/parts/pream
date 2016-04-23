@@ -23,5 +23,7 @@
 \usepackage{datetime}
 	\newdateformat{CurrentYear}{\THEYEAR}
 
+\usepackage{calc}
+
 \usepackage{url}
 \bibliographystyle{ugost2008}
