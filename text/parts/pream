@@ -2,28 +2,117 @@
 	\setdefaultlanguage{russian}
 	\setotherlanguage{english}
 
+\usepackage{indentfirst}
+
+\usepackage{csquotes} % Вставка русских кавычек, типографских знаков
+\usepackage{listings} % Вставка листингов ЯП
+
+% Гиперссылки
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks, urlcolor={black}, % Все ссылки черного цвета, кликабельные
+    linkcolor={black}, citecolor={black}, filecolor={black},
+}
+
+\renewcommand{\baselinestretch}{1.4} % Полуторный межстрочный интервал
+
+\parindent 1.27cm % Абзацный отступ
+
+\usepackage{enumitem}
+\setlist[enumerate,itemize]{leftmargin=12.7mm} % Отступы в списках
+
+\makeatletter
+    \AddEnumerateCounter{\asbuk}{\@asbuk}{м)}
+\makeatother
+\setlist{nolistsep} % Нет отступов между пунктами списка
+\renewcommand{\labelitemi}{--} % Маркет списка --
+\renewcommand{\labelenumi}{\asbuk{enumi})} % Список второго уровня
+\renewcommand{\labelenumii}{\arabic{enumii})} % Список третьего уровня
+
 \usepackage{fontspec}
 	\setmainfont%[ExternalLocation=parts/fonts/]
-		{Liberation Serif}
+		{Times New Roman Cyr}
 	\setromanfont%[ExternalLocation=parts/fonts/]
-		{Liberation Serif}
+		{Times New Roman Cyr}
 	\setsansfont%[ExternalLocation=parts/fonts/]
-		{Liberation Sans}
+		{Times New Roman Cyr}
 	\setmonofont%[ExternalLocation=parts/fonts/]
 		{Liberation Mono}
 	\newfontfamily\cyrillicfont%[ExternalLocation=parts/fonts/]
-		{Liberation Serif}
+		{Times New Roman Cyr}
 
 \usepackage{geometry}
-	\geometry{left	= 3	cm}
-	\geometry{right	= 1	cm}
-	\geometry{top	= 2	cm}
-	\geometry{bottom= 2	cm}
+	\geometry{left	= 25	mm}
+	\geometry{right	= 10	mm}
+	\geometry{top	= 20	mm}
+	\geometry{bottom= 20	mm}
 
-\usepackage{datetime}
-	\newdateformat{CurrentYear}{\THEYEAR}
+\usepackage{tocloft} % Оформление оглавления
+\renewcommand{\cfttoctitlefont}{\hspace{0.38\textwidth} \bfseries\MakeUppercase}
+\renewcommand{\cftbeforetoctitleskip}{-1em}
+\renewcommand{\cftaftertoctitle}{\mbox{}\hfill \\ \mbox{}\hfill{\footnotesize Стр.}\vspace{-2.5em}}
+\renewcommand{\cftchapfont}{\normalsize\bfseries \MakeUppercase{\chaptername} }
+\renewcommand{\cftsecfont}{\hspace{31pt}}
+\renewcommand{\cftsubsecfont}{\hspace{11pt}}
+\renewcommand{\cftbeforechapskip}{1em}
+\renewcommand{\cftparskip}{-1mm}
+\renewcommand{\cftdotsep}{1}
+\setcounter{tocdepth}{2}
 
+%Отдельное оформление основных частей работы
+\newcommand{\empline}{\mbox{}\newline}
+\newcommand{\likechapterheading}[1]{
+
+	\newpage
+	\begin{center}
+	\textbf{\MakeUppercase{#1}}
+	\end{center}
+	\empline
+}
+
+\makeatletter
+\renewcommand{\@dotsep}{2}
+ \newcommand{\l@likechapter}[2]{{\bfseries\@dottedtocline{0}{0pt}{0pt}{#1}{#2}}}
+\makeatother
+\newcommand{\likechapter}[1]{
+\likechapterheading{#1}
+%\addcontentsline{toc}{likechapter}{\MakeUppercase{#1}}}
+\addcontentsline{toc}{likechapter}{#1}}
+
+\usepackage{fancyhdr} % нумерация страниц
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyheadoffset{0mm}
+\fancyfootoffset{0mm}
+\setlength{\headheight}{17pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{
+\fancyhf{}
+\rhead{\thepage}}
+
+\usepackage{titlesec} % Заголовки
+\titleformat{\chapter}[display]
+{\filcenter}
+{\MakeUppercase{\chaptertitlename} \thechapter}
+{8pt}
+{\bfseries}{}
+\titleformat{\section}
+{\normalsize\bfseries}
+{\thesection}
+{1em}{}
+\titleformat{\subsection}
+{\normalsize\bfseries}
+{\thesubsection}
+{1em}{}
+\titlespacing*{\chapter}{0pt}{-30pt}{8pt}
+\titlespacing*{\section}{\parindent}{*4}{*4}
+\titlespacing*{\subsection}{\parindent}{*4}{*4}
 \usepackage{calc}
 
 \usepackage{url}
 \bibliographystyle{ugost2008}
+
+\usepackage{datetime}
+	\newdateformat{CurrentYear}{\THEYEAR}

@@ -1,15 +1,19 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[a4paper,14pt]{extreport}
 \input{parts/pream}
+\setcounter{page}{3}
 \begin{document}
 	\input{parts/TitlePage.tex}
 	\tableofcontents
 
+	\input{parts/Abbreviations.tex}
 	\input{parts/introduction.tex}
+	\input{parts/target.tex}
 	\input{parts/common.tex}
 	\input{parts/security.tex}
 	\input{parts/work.tex}
 	\input{parts/finish.tex}
 
+	\newpage
 	\nocite{*}
 	\bibliography{parts/biblio}
 \end{document}
